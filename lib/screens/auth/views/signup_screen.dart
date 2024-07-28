@@ -78,7 +78,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   const SizedBox(height: defaultPadding * 2),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, homeScreenRoute);
+                      Navigator.pushNamed(context, mainScreenRoute);
                     },
                     child: const Text("Continue"),
                   ),

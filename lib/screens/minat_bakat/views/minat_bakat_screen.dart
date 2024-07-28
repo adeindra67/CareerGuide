@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:shop/constants.dart';
-import 'package:shop/screens/home/views/job_listings.dart';
-import 'package:shop/screens/home/views/career_info_screen.dart';
-import 'package:shop/screens/home/views/list_university_screen.dart';
-import 'karirzone_screen.dart';
+import 'package:shop/screens/minat_bakat/views/tes_kepribadian_screen.dart';
+import 'package:shop/screens/minat_bakat/views/tes_penjurusan_screen.dart';
+import 'package:shop/screens/minat_bakat/views/tes_kemampuan_screen.dart';
+import 'package:shop/screens/minat_bakat/views/tes_gaya_belajar_screen.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class MinatBakatScreen extends StatelessWidget {
+  const MinatBakatScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "HOME",
+          "TES MINAT & BAKAT",
           style: TextStyle(fontWeight: FontWeight.bold, color: whiteColor),
         ),
         backgroundColor: primaryColor,
@@ -34,8 +34,20 @@ class HomeScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Image.asset(
-                "assets/images/career_guide_banner.png", // Ganti dengan path banner Anda
+                "assets/images/minat_bakat_banner.png", // Ganti dengan path banner Anda
                 fit: BoxFit.cover,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                "Sobat Karir sudah tahu minat bakatmu belum? Cari tahu lebih dalam bersama Career Guide",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: primaryColor,
+                ),
               ),
             ),
             GridView.count(
@@ -44,49 +56,49 @@ class HomeScreen extends StatelessWidget {
               mainAxisSpacing: 10,
               padding: const EdgeInsets.all(defaultPadding),
               shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
+              physics: NeverScrollableScrollPhysics(),
               children: [
                 FeatureBox(
+                  icon: Icons.person,
+                  title: "Tes Kepribadian",
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => TesKepribadianScreen()),
+                    );
+                  },
+                ),
+                FeatureBox(
                   icon: Icons.school,
-                  title: "KarirZone",
+                  title: "Tes Penjurusan",
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => KarirZoneScreen()),
+                          builder: (context) => TesPenjurusanScreen()),
                     );
                   },
                 ),
                 FeatureBox(
-                  icon: Icons.work,
-                  title: "Job Listings",
+                  icon: Icons.assessment,
+                  title: "Tes Kemampuan",
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => JobListingsScreen()),
+                          builder: (context) => TesKemampuanScreen()),
                     );
                   },
                 ),
                 FeatureBox(
-                  icon: Icons.account_balance,
-                  title: "List University",
+                  icon: Icons.book,
+                  title: "Tes Gaya Belajar",
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => ListUniversityScreen()),
-                    );
-                  },
-                ),
-                FeatureBox(
-                  icon: Icons.info,
-                  title: "Informasi Karir",
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => CareerInfoScreen()),
+                          builder: (context) => TesGayaBelajarScreen()),
                     );
                   },
                 ),
