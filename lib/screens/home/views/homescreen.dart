@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop/constants.dart';
+import 'package:shop/screens/home/views/job_listings.dart';
 
 import 'karirzone_screen.dart'; // Pastikan untuk mengimpor constants.dart
 
@@ -59,7 +60,11 @@ class HomeScreen extends StatelessWidget {
                   icon: Icons.work,
                   title: "Job Listings",
                   onTap: () {
-                    // Navigasi ke halaman Job Listings
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => JobListingsScreen()),
+                    );
                   },
                 ),
                 FeatureBox(

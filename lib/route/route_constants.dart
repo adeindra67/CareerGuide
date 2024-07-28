@@ -7,3 +7,4 @@ const String termsOfServicesScreenRoute = "terms_of_services";
 const String homeScreenRoute = "home";
 const String karirZoneScreenRoute = 'karirzone';
 const String entryPointScreenRoute = "entry_point";
+const String jobListingsScreenRoute = 'joblistings';
