@@ -60,15 +60,16 @@ const double defaultBorderRadious = 12.0;
 const Duration defaultDuration = Duration(milliseconds: 300);
 
 final passwordValidator = MultiValidator([
-  RequiredValidator(errorText: 'Password is required'),
-  MinLengthValidator(8, errorText: 'password must be at least 8 digits long'),
+  RequiredValidator(errorText: 'Password diperlukan'),
+  MinLengthValidator(8,
+      errorText: 'Password harus memiliki setidaknya 8 karakter'),
   PatternValidator(r'(?=.*?[#?!@$%^&*-])',
-      errorText: 'passwords must have at least one special character')
+      errorText: 'Password harus mengandung setidaknya satu karakter khusus')
 ]);
 
 final emaildValidator = MultiValidator([
-  RequiredValidator(errorText: 'Email is required'),
-  EmailValidator(errorText: "Enter a valid email address"),
+  RequiredValidator(errorText: 'Email diperlukan'),
+  EmailValidator(errorText: "Masukkan alamat email yang valid"),
 ]);
 
-const pasNotMatchErrorText = "passwords do not match";
+const pasNotMatchErrorText = "Password tidak cocok";

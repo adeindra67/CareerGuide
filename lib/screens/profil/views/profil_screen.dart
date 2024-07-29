@@ -17,8 +17,7 @@ class ProfilScreen extends StatelessWidget {
         ),
         backgroundColor: primaryColor,
         centerTitle: true,
-        automaticallyImplyLeading: true,
-        iconTheme: IconThemeData(color: whiteColor),
+        automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(
         child: Column(
