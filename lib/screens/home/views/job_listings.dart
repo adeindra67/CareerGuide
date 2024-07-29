@@ -23,6 +23,7 @@ class JobListingsScreen extends StatelessWidget {
         ),
         backgroundColor: primaryColor,
         centerTitle: true,
+        iconTheme: IconThemeData(color: whiteColor),
       ),
       body: SingleChildScrollView(
         child: Column(

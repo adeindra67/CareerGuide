@@ -16,4 +16,9 @@ const String tesPenjurusanScreenRoute = 'tes_penjurusan';
 const String tesKemampuanScreenRoute = 'tes_kemampuan';
 const String tesGayaBelajarScreenRoute = 'tes_gaya_belajar';
 const String mainScreenRoute = 'main';
+const String pembelianScreenRoute = 'pembelian';
+const String karirPremiumScreenRoute = 'karirPremium';
+const String panduanPerkuliahanScreenRoute = 'panduanPerkuliahan';
+const String artikelPremiumScreenRoute = 'artikelPremium';
+
 const String counterScreenRoute = '/counter';

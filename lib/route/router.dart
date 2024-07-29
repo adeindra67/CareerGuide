@@ -13,7 +13,11 @@ import 'package:shop/screens/minat_bakat/views/tes_kepribadian_screen.dart';
 import 'package:shop/screens/minat_bakat/views/tes_penjurusan_screen.dart';
 import 'package:shop/screens/minat_bakat/views/tes_kemampuan_screen.dart';
 import 'package:shop/screens/minat_bakat/views/tes_gaya_belajar_screen.dart';
+import 'package:shop/screens/pembelian/views/pembelian_screen.dart';
+import 'package:shop/screens/pembelian/views/karir_premium_screen.dart';
 import 'package:shop/screens/home/views/counter_screen.dart';
+import 'package:shop/screens/pembelian/views/panduan_perkuliahan_screen.dart';
+import 'package:shop/screens/pembelian/views/artikel_premium_screen.dart';
 import 'route_constants.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -44,6 +48,15 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => TesKemampuanScreen());
     case tesGayaBelajarScreenRoute:
       return MaterialPageRoute(builder: (context) => TesGayaBelajarScreen());
+    case 'pembelian':
+      return MaterialPageRoute(builder: (context) => PembelianScreen());
+    case 'karirPremium':
+      return MaterialPageRoute(builder: (context) => KarirPremiumScreen());
+    case panduanPerkuliahanScreenRoute:
+      return MaterialPageRoute(
+          builder: (context) => PanduanPerkuliahanScreen());
+    case artikelPremiumScreenRoute:
+      return MaterialPageRoute(builder: (context) => ArtikelPremiumScreen());
     case mainScreenRoute:
       return MaterialPageRoute(builder: (context) => MainScreen());
     case '/counter':

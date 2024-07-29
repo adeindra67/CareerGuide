@@ -21,6 +21,7 @@ class _KarirZoneScreenState extends State<KarirZoneScreen> {
         ),
         backgroundColor: primaryColor,
         centerTitle: true,
+        iconTheme: IconThemeData(color: whiteColor),
       ),
       body: SingleChildScrollView(
         child: Column(

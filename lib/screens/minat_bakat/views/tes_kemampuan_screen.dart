@@ -14,6 +14,7 @@ class TesKemampuanScreen extends StatelessWidget {
         ),
         backgroundColor: primaryColor,
         centerTitle: true,
+        iconTheme: IconThemeData(color: whiteColor),
       ),
       body: Center(
         child: Text(

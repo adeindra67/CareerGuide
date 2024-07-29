@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shop/constants.dart';
 import 'package:shop/screens/home/views/homescreen.dart';
-import 'package:shop/screens/minat_bakat/views/minat_bakat_screen.dart'; // Pastikan path sesuai
+import 'package:shop/screens/minat_bakat/views/minat_bakat_screen.dart';
+import 'package:shop/screens/pembelian/views/pembelian_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -16,7 +17,7 @@ class _MainScreenState extends State<MainScreen> {
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     MinatBakatScreen(),
-    // Tambahkan layar lain di sini jika ada
+    PembelianScreen(), // Tambahkan layar lain di sini jika ada
   ];
 
   void _onItemTapped(int index) {
@@ -39,7 +40,10 @@ class _MainScreenState extends State<MainScreen> {
             icon: Icon(Icons.business),
             label: 'Minat Bakat',
           ),
-          // Tambahkan item navbar lain di sini jika ada
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            label: 'Pembelian',
+          ),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: primaryColor,
