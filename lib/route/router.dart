@@ -18,6 +18,8 @@ import 'package:shop/screens/pembelian/views/karir_premium_screen.dart';
 import 'package:shop/screens/home/views/counter_screen.dart';
 import 'package:shop/screens/pembelian/views/panduan_perkuliahan_screen.dart';
 import 'package:shop/screens/pembelian/views/artikel_premium_screen.dart';
+import 'package:shop/screens/ruang_diskusi/views/ruang_diskusi_screen.dart';
+import 'package:shop/screens/profil/views/profil_screen.dart';
 import 'route_constants.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -59,6 +61,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => ArtikelPremiumScreen());
     case mainScreenRoute:
       return MaterialPageRoute(builder: (context) => MainScreen());
+    case ruangDiskusiScreenRoute:
+      return MaterialPageRoute(builder: (context) => RuangDiskusiScreen());
+    case profilScreenRoute:
+      return MaterialPageRoute(builder: (context) => ProfilScreen());
     case '/counter':
       return MaterialPageRoute(builder: (context) => CounterScreen());
 

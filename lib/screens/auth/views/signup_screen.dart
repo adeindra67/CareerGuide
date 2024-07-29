@@ -14,6 +14,7 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   final _formKey = GlobalKey<FormState>();
+  bool _isChecked = false; // Menyimpan status checkbox
 
   @override
   Widget build(BuildContext context) {
@@ -45,14 +46,26 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   const SizedBox(height: defaultPadding),
                   Row(
                     children: [
-                      Checkbox(
-                        onChanged: (value) {},
-                        value: false,
+                      Theme(
+                        data: ThemeData(
+                          unselectedWidgetColor:
+                              primaryColor, // Warna checkbox ketika tidak dicentang
+                        ),
+                        child: Checkbox(
+                          onChanged: (value) {
+                            setState(() {
+                              _isChecked = value ?? false;
+                            });
+                          },
+                          value: _isChecked,
+                          activeColor:
+                              primaryColor, // Warna checkbox ketika dicentang
+                        ),
                       ),
                       Expanded(
                         child: Text.rich(
                           TextSpan(
-                            text: "I agree with the",
+                            text: "Saya setuju dengan",
                             children: [
                               TextSpan(
                                 recognizer: TapGestureRecognizer()
@@ -60,14 +73,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     Navigator.pushNamed(
                                         context, termsOfServicesScreenRoute);
                                   },
-                                text: " Terms of service ",
+                                text: " Syarat Layanan ",
                                 style: const TextStyle(
                                   color: primaryColor,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
                               const TextSpan(
-                                text: "& privacy policy.",
+                                text: "dan Kebijakan Privasi.",
                               ),
                             ],
                           ),
@@ -80,7 +93,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     onPressed: () {
                       Navigator.pushNamed(context, mainScreenRoute);
                     },
-                    child: const Text("Continue"),
+                    child: const Text("Lanjutkan"),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -90,7 +103,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         onPressed: () {
                           Navigator.pushNamed(context, logInScreenRoute);
                         },
-                        child: const Text("Log in aja!"),
+                        child: const Text("Masuk aja!"),
                       )
                     ],
                   ),

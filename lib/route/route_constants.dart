@@ -20,5 +20,6 @@ const String pembelianScreenRoute = 'pembelian';
 const String karirPremiumScreenRoute = 'karirPremium';
 const String panduanPerkuliahanScreenRoute = 'panduanPerkuliahan';
 const String artikelPremiumScreenRoute = 'artikelPremium';
-
+const String ruangDiskusiScreenRoute = 'ruangDiskusi';
+const String profilScreenRoute = 'profil';
 const String counterScreenRoute = '/counter';

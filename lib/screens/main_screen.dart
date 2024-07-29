@@ -3,6 +3,8 @@ import 'package:shop/constants.dart';
 import 'package:shop/screens/home/views/homescreen.dart';
 import 'package:shop/screens/minat_bakat/views/minat_bakat_screen.dart';
 import 'package:shop/screens/pembelian/views/pembelian_screen.dart';
+import 'package:shop/screens/ruang_diskusi/views/ruang_diskusi_screen.dart';
+import 'package:shop/screens/profil/views/profil_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -17,7 +19,9 @@ class _MainScreenState extends State<MainScreen> {
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     MinatBakatScreen(),
-    PembelianScreen(), // Tambahkan layar lain di sini jika ada
+    PembelianScreen(),
+    RuangDiskusiScreen(),
+    ProfilScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -44,9 +48,18 @@ class _MainScreenState extends State<MainScreen> {
             icon: Icon(Icons.shopping_cart),
             label: 'Pembelian',
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.forum),
+            label: 'Ruang Diskusi',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profil',
+          ),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: primaryColor,
+        unselectedItemColor: Colors.grey, // Warna ikon tidak dipilih
         onTap: _onItemTapped,
       ),
     );
