@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shop/constants.dart';
 import 'package:shop/screens/minat_bakat/views/tes_kepribadian_screen.dart';
 import 'package:shop/screens/minat_bakat/views/tes_penjurusan_screen.dart';
@@ -56,10 +57,10 @@ class MinatBakatScreen extends StatelessWidget {
               mainAxisSpacing: 10,
               padding: const EdgeInsets.all(defaultPadding),
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               children: [
                 FeatureBox(
-                  icon: Icons.person,
+                  iconPath: 'assets/icons/pribadi.svg',
                   title: "Tes Kepribadian",
                   onTap: () {
                     Navigator.push(
@@ -70,18 +71,7 @@ class MinatBakatScreen extends StatelessWidget {
                   },
                 ),
                 FeatureBox(
-                  icon: Icons.school,
-                  title: "Tes Penjurusan",
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => TesPenjurusanScreen()),
-                    );
-                  },
-                ),
-                FeatureBox(
-                  icon: Icons.assessment,
+                  iconPath: 'assets/icons/kemampuan.svg',
                   title: "Tes Kemampuan",
                   onTap: () {
                     Navigator.push(
@@ -92,13 +82,24 @@ class MinatBakatScreen extends StatelessWidget {
                   },
                 ),
                 FeatureBox(
-                  icon: Icons.book,
+                  iconPath: 'assets/icons/belajar.svg',
                   title: "Tes Gaya Belajar",
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => TesGayaBelajarScreen()),
+                    );
+                  },
+                ),
+                FeatureBox(
+                  iconPath: 'assets/icons/penjurusan.svg',
+                  title: "Tes Penjurusan",
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => TesPenjurusanScreen()),
                     );
                   },
                 ),
@@ -112,13 +113,13 @@ class MinatBakatScreen extends StatelessWidget {
 }
 
 class FeatureBox extends StatelessWidget {
-  final IconData icon;
+  final String iconPath;
   final String title;
   final VoidCallback onTap;
 
   const FeatureBox({
     Key? key,
-    required this.icon,
+    required this.iconPath,
     required this.title,
     required this.onTap,
   }) : super(key: key);
@@ -143,7 +144,12 @@ class FeatureBox extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, size: 50, color: primaryColor),
+            SvgPicture.asset(
+              iconPath,
+              width: 50,
+              height: 50,
+              // Tanpa colorFilter untuk menjaga warna asli
+            ),
             const SizedBox(height: 10),
             Text(
               title,

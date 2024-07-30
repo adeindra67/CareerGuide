@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shop/constants.dart';
 import 'package:shop/screens/home/views/job_listings.dart';
 import 'package:shop/screens/home/views/career_info_screen.dart';
@@ -47,7 +48,7 @@ class HomeScreen extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               children: [
                 FeatureBox(
-                  icon: Icons.school,
+                  iconPath: 'assets/icons/karirzone.svg',
                   title: "KarirZone",
                   onTap: () {
                     Navigator.push(
@@ -58,7 +59,18 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
                 FeatureBox(
-                  icon: Icons.work,
+                  iconPath: 'assets/icons/career_info.svg',
+                  title: "Informasi Karir",
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CareerInfoScreen()),
+                    );
+                  },
+                ),
+                FeatureBox(
+                  iconPath: 'assets/icons/job_listings.svg',
                   title: "Job Listings",
                   onTap: () {
                     Navigator.push(
@@ -69,24 +81,13 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
                 FeatureBox(
-                  icon: Icons.account_balance,
+                  iconPath: 'assets/icons/list_university.svg',
                   title: "List University",
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => ListUniversityScreen()),
-                    );
-                  },
-                ),
-                FeatureBox(
-                  icon: Icons.info,
-                  title: "Informasi Karir",
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => CareerInfoScreen()),
                     );
                   },
                 ),
@@ -100,13 +101,13 @@ class HomeScreen extends StatelessWidget {
 }
 
 class FeatureBox extends StatelessWidget {
-  final IconData icon;
+  final String iconPath;
   final String title;
   final VoidCallback onTap;
 
   const FeatureBox({
     Key? key,
-    required this.icon,
+    required this.iconPath,
     required this.title,
     required this.onTap,
   }) : super(key: key);
@@ -131,7 +132,12 @@ class FeatureBox extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, size: 50, color: primaryColor),
+            SvgPicture.asset(
+              iconPath,
+              width: 50,
+              height: 50,
+              // Tanpa colorFilter untuk menjaga warna asli
+            ),
             const SizedBox(height: 10),
             Text(
               title,
